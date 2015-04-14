@@ -65,6 +65,10 @@ alias du="du -h -d 2"
 alias apt="sudo apt-get install"
 alias pipi="sudo pip install"
 alias load="source ~/.zshrc"
+alias node="nodejs"
+alias n="nodejs"
+alias gor="go run"
+alias gob="go build"
 
 # User configuration
 
@@ -104,8 +108,6 @@ export GOROOT=/root/env/go
 export GOPATH=/root/my/go
 export PATH=$PATH:/root
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-#PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m$%{$reset_color%} " 
 
 
 #alias gox="gox -osarch=\"linux/amd64 windows/386\" "

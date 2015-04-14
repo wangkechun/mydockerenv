@@ -16,6 +16,8 @@ RUN pip install -U tornado ipython
 #golang
 ADD golang/go1.4.2.linux-amd64.tar.gz /root/env/
 
+RUN apt-get install nodejs npm
+
 ADD oh-my-zsh/ /root/
 RUN chsh -s /bin/zsh
 CMD /bin/zsh
