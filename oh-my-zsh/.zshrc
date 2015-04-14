@@ -99,9 +99,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-#export GOROOT="/home/wkc/Downloads/Downloads/go"
-#export GOPATH="/home/wkc/mygo:/home/wkc/project"
-#export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export GOROOT=/root/env/go
+export GOPATH=/root/my/go
+export PATH=$PATH:/root
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #PROMPT="%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m$%{$reset_color%} " 
 

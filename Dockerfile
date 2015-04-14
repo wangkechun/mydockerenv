@@ -15,10 +15,7 @@ RUN pip install -U tornado ipython
 
 #golang
 ADD golang/go1.4.2.linux-amd64.tar.gz /root/env/
-ENV GOROOT="/root/env/go" GOPATH="/root/my/go" PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$GOROOT/bin:$GOPATH/bin"
-RUN echo "\n\nexport PATH=$PATH:$GOROOT/bin:$GOPATH/bin\n" >> /etc/profile
 
 ADD oh-my-zsh/ /root/
 RUN chsh -s /bin/zsh
-
-CMD /bin/zsh -l
+CMD /bin/zsh
