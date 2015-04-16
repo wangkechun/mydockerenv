@@ -18,14 +18,29 @@ ADD golang/go1.4.2.linux-amd64.tar.gz /root/env/
 
 #RUN apt-get install nodejs npm
 
+#zsh
 ADD oh-my-zsh/ /root/
 RUN chsh -s /bin/zsh
 CMD /bin/zsh
 
 #nvm
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
+RUN zsh -c "source ~/.zshrc && nvm install iojs"
+RUN zsh -c "source ~/.zshrc && nvm use iojs"
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+
+#cnpm
+RUN zsh -c "source ~/.zshrc && npm install -g cnpm --registry=http://registry.npm.taobao.org"
+
+#npm
+RUN cnpm install -g express typescript coffee-script
+
+#mongodb 
+apt-get install mongodb
 
 
-# mysql mongodb npm
+# mysql 
+apt-get install mysql
+
+
 
 

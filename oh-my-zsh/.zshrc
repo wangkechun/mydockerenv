@@ -133,3 +133,9 @@ bindkey '^T' autosuggest-toggle
 #nvm
 export NVM_DIR="/root/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
+export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+
+
+

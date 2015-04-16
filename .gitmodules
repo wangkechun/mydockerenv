@@ -4,3 +4,6 @@
 [submodule "oh-my-zsh/.zsh-autosuggestions"]
 	path = oh-my-zsh/.zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions
+[submodule "oh-my-zsh/.nvm"]
+	path = oh-my-zsh/.nvm
+	url = https://github.com/creationix/nvm
