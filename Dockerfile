@@ -16,10 +16,16 @@ RUN pip install -U tornado ipython
 #golang
 ADD golang/go1.4.2.linux-amd64.tar.gz /root/env/
 
-RUN apt-get install nodejs npm
+#RUN apt-get install nodejs npm
 
 ADD oh-my-zsh/ /root/
 RUN chsh -s /bin/zsh
 CMD /bin/zsh
 
+#nvm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.24.1/install.sh | bash
+
+
 # mysql mongodb npm
+
+
