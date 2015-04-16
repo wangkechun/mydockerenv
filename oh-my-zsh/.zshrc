@@ -70,7 +70,7 @@ alias n="nodejs"
 alias gor="go run"
 alias gob="go build"
 alias c="cd"
-
+alias rm="trash-put"
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
@@ -113,3 +113,17 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 #alias gox="gox -osarch=\"linux/amd64 windows/386\" "
 
 
+
+# Setup zsh-autosuggestions
+source /home/wkc/.zsh-autosuggestions/autosuggestions.zsh
+
+# Enable autosuggestions automatically
+zle-line-init() {
+    zle autosuggest-start
+}
+
+zle -N zle-line-init
+
+# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
+# zsh-autosuggestions is designed to be unobtrusive)
+bindkey '^T' autosuggest-toggle
