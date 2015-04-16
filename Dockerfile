@@ -21,3 +21,5 @@ RUN apt-get install nodejs npm
 ADD oh-my-zsh/ /root/
 RUN chsh -s /bin/zsh
 CMD /bin/zsh
+
+# mysql mongodb npm

@@ -69,6 +69,7 @@ alias node="nodejs"
 alias n="nodejs"
 alias gor="go run"
 alias gob="go build"
+alias c="cd"
 
 # User configuration
 
@@ -104,9 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 
-export GOROOT=/root/env/go
-export GOPATH=/root/my/go
-export PATH=$PATH:/root
+export GOROOT=~/env/go
+export GOPATH=~/mygo
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
