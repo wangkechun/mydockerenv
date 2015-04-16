@@ -115,7 +115,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 
 # Setup zsh-autosuggestions
-source /home/wkc/.zsh-autosuggestions/autosuggestions.zsh
+source ~/.zsh-autosuggestions/autosuggestions.zsh
 
 # Enable autosuggestions automatically
 zle-line-init() {
