@@ -35,12 +35,13 @@ RUN zsh -c "source ~/.zshrc && npm install -g cnpm --registry=http://registry.np
 RUN cnpm install -g express typescript coffee-script
 
 #mongodb 
-apt-get install mongodb
+RUN apt-get install -y mongodb
 
 
 # mysql 
-apt-get install mysql
+RUN apt-get install -y mysql-server
 
+RUN cnpm install -g tsd@next
 
 
 

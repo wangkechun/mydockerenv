@@ -45,7 +45,7 @@ ZSH_THEME="cloud"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dircycle docker extract fabric tmux wd sudo autojump go)
+plugins=(git dircycle docker extract fabric tmux wd sudo autojump go node npm)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
+export EDITOR='vim'
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
