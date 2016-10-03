@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:14.04
 
 ADD ./resolv.conf /etc/resolv.conf
 
@@ -8,8 +8,6 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y autojump build-essential c
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python-pip python3-dev python3-pip supervisor 
 
 ADD pip/pip.conf /root/.pip/pip.conf
-
-RUN pip --trusted-host mirrors.aliyun.com install -U pip ipython
 
 RUN apt-get -y install openssh-server
 

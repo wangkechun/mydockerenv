@@ -103,6 +103,4 @@ autoload -Uz _zplugin
 ### End of Zplugin's installer chunk
 
 zplugin load psprint zsh-navigation-tools
-zplugin load psprint---zprompts
 zplugin load zsh-users/zsh-autosuggestions
-zplugin load zsh-users/zsh-syntax-highlighting
