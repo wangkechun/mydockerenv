@@ -14,7 +14,7 @@ RUN pip --trusted-host mirrors.aliyun.com install -U pip ipython
 RUN apt-get -y install openssh-server
 
 #golang
-ADD go1.7.1.linux-amd64.tar.gz /root/local/
+ADD http://q.hi-hi.cn/go1.7.1.linux-amd64.tar.gz /root/local/
 
 #zsh
 ADD oh-my-zsh/ /root/
