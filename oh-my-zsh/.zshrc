@@ -50,36 +50,13 @@ plugins=(git dircycle docker extract fabric tmux wd sudo autojump go node npm)
 
 source $ZSH/oh-my-zsh.sh
 
-alias gg="git gui"
-alias i="ipython2 notebook --profile wkc"
-alias lll="ls -alh"
-alias g="git"
-alias gsr="git svn rebase"
-alias gsd="git svn dcommit"
-alias gsf="git svn fetch"
-alias gp="git push"
-alias p="python2"
-alias ip="ipython2 --profile wkc"
-alias p3="python3"
-alias du="du -h -d 2"
-alias apt="sudo apt-get install"
-alias pipi="sudo pip install"
-alias load="source ~/.zshrc"
-alias node="nodejs"
-alias n="nodejs"
-alias gor="go run"
-alias gob="go build"
-alias c="cd"
-alias rm="trash-put"
-# User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -105,37 +82,27 @@ export EDITOR='vim'
 
 
 
-export GOROOT=~/env/go
-export GOPATH=~/mygo
+export GOROOT=/root/local/go
+export GOPATH=~
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-
-#alias gox="gox -osarch=\"linux/amd64 windows/386\" "
-
-
-
-# Setup zsh-autosuggestions
-source ~/.zsh-autosuggestions/autosuggestions.zsh
-
-# Enable autosuggestions automatically
-zle-line-init() {
-    zle autosuggest-start
-}
-
-zle -N zle-line-init
-
-# use ctrl+t to toggle autosuggestions(hopefully this wont be needed as
-# zsh-autosuggestions is designed to be unobtrusive)
-bindkey '^T' autosuggest-toggle
-
-
-
 #nvm
-export NVM_DIR="/root/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-export NVM_IOJS_ORG_MIRROR=http://npm.taobao.org/mirrors/iojs
 export NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
 
+export TERM=xterm-256color
+export LANG=C.UTF-8
 
 
+### Added by Zplugin's installer
+source '/root/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+
+zplugin load psprint zsh-navigation-tools
+zplugin load psprint---zprompts
+zplugin load zsh-users/zsh-autosuggestions
+zplugin load zsh-users/zsh-syntax-highlighting

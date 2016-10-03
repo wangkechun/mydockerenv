@@ -1,47 +1,34 @@
-FROM rastasheep/ubuntu-sshd
-RUN echo
-ADD ./sources_hnust.list /etc/apt/sources.list
-# ADD ./resolv.conf /etc/resolv.conf
-RUN apt-get update || echo
-RUN apt-get install -y apache2 apache2-dev apache2-utils aria2 atop autojump autossh axel bison build-essential byobu clang cmake convmv ctags curl cython cython3 dos2unix dstat enca fish git git-svn htop httpie iftop libffi-dev libxml2 libxml2-dev libxslt1-dev libxslt1.1 libzmq-dev libzmqpp3 mercurial mongodb mosh network-manager-vpnc nginx nload nmap nmon npm p7zip-full pandoc php-pear php5-dev phpmyadmin polipo protobuf-compiler proxychains pypy python-cffi python-dev python-pip python-scipy python3-dev python3-pip redis-server redis-tools ruby-dev sshfs supervisor tasksel tmux trash-cli tree vim zsh
+FROM ubuntu
 
-RUN apt-get install -y  gfortran  libopenblas-dev  liblapack-dev  libzmq-dev  --no-install-recommends
+ADD ./resolv.conf /etc/resolv.conf
+
+RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/" /etc/apt/sources.list && apt-get update
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y autojump build-essential curl git htop httpie iftop nload tmux trash-cli tree vim zsh
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev python-pip python3-dev python3-pip supervisor 
 
 ADD pip/pip.conf /root/.pip/pip.conf
-RUN pip install -U numpy scipy pyzmq jinja2
-RUN apt-get install -y python-matplotlib
-RUN pip install -U pandas
-RUN pip install -U tornado ipython
+
+RUN pip --trusted-host mirrors.aliyun.com install -U pip ipython
+
+RUN apt-get -y install openssh-server
 
 #golang
-ADD golang/go1.4.2.linux-amd64.tar.gz /root/env/
-
-#RUN apt-get install nodejs npm
+ADD go1.7.1.linux-amd64.tar.gz /root/local/
 
 #zsh
 ADD oh-my-zsh/ /root/
 RUN chsh -s /bin/zsh
 CMD /bin/zsh
 
+#shell
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/psprint/zplugin/master/doc/install.sh) "
+
+RUN zsh -c "echo download zplugin..." 
+
 #nvm
-RUN zsh -c "source ~/.zshrc && nvm install iojs"
-RUN zsh -c "source ~/.zshrc && nvm use iojs"
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-
-#cnpm
-RUN zsh -c "source ~/.zshrc && npm install -g cnpm --registry=http://registry.npm.taobao.org"
-
-#npm
-RUN cnpm install -g express typescript coffee-script
-
-#mongodb 
-RUN apt-get install -y mongodb
+RUN zsh -c "source ~/.zshrc && nvm install node && nvm alias default node && nvm use 6 && npm config set registry http://registry.npm.taobao.org/ "
 
 
-# mysql 
-RUN apt-get install -y mysql-server
-
-RUN cnpm install -g tsd@next
-
-
+ENTRYPOINT zsh
 

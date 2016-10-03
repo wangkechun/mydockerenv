@@ -1,7 +1,7 @@
 run :
-	docker run -i -t --rm learn/3
+	docker run -it --rm -v `pwd`:/src/ -p 2233:22 --name myubuntu --hostname myubuntu myubuntu:20161003 zsh
 
 build :
-	docker build -t learn/3 . 
+	docker build -t myubuntu:20161003 .
 
 all : build run
