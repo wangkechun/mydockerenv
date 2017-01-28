@@ -104,3 +104,5 @@ autoload -Uz _zplugin
 
 zplugin load psprint zsh-navigation-tools
 zplugin load zsh-users/zsh-autosuggestions
+
+DISABLE_AUTO_UPDATE=true
