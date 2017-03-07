@@ -28,5 +28,5 @@ RUN zsh -c "echo download zplugin..."
 RUN zsh -c "source ~/.zshrc && nvm install node && nvm alias default node && nvm use 7 && npm config set registry http://registry.npm.taobao.org/ "
 
 
-ENTRYPOINT zsh
+CMD zsh
 
