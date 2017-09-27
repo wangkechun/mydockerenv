@@ -25,7 +25,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/psprint/zplugin/master
 RUN zsh -c "echo download zplugin..." 
 
 #nvm
-RUN zsh -c "source ~/.zshrc && nvm install node && nvm alias default node && nvm use 7 && npm config set registry http://registry.npm.taobao.org/ "
+RUN zsh -c "source ~/.zshrc && nvm install node && nvm alias default node && nvm use node && npm config set registry http://registry.npm.taobao.org/ "
 
 
 CMD zsh
