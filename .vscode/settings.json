@@ -1,0 +1,4 @@
+{
+    "sync-rsync.remote": "root@csgpu2:/disk2/wangkechun/mydockerenv",
+    "sync-rsync.onSave": true
+}
